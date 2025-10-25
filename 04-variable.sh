@@ -1,6 +1,6 @@
 #!/bin/bash
 # variable names eppudu kuda a meaningful ga vundali ante ardham ayyala vundali, 
-# Arguments
+# Arguments bayata numchi pass cheyatum ante manaki nachhina names bayata numci ayina pass cheeyachhu
 PERSON1=$1
 PERSON2=$2
 
