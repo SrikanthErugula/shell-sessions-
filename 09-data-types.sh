@@ -5,7 +5,7 @@ NUMBER1=100
 NUMBER2=200
 NAME=DevOps
 
-Number1=2
+number1=2
 number2=4
 SUM=$(($number1+$number2))
 
