@@ -1,5 +1,5 @@
 #!/bin/bash
 
 
-export COURSE="SrikanthReddy"
+ COURSE="SrikanthReddy"
 echo "Course name is: $COURSE"
