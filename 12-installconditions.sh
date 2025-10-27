@@ -17,4 +17,15 @@ else
     #exit 0 (success ane dhaggara zero ivachu but in shell emi ivvakapoina by defalut it will be consider as zero
 fi
 # sudo sh 12-installconditions.sh  (ila iste mysql install avuthundi)
+# if uwant install some other server as well then do like as below
+
+dnf install nginx -y
+
+if [ $? -ne 0 ]; then
+   echo "ERROR:: Installing nginx is failure"
+    exit 1
+else
+   echo "Installing nginx is SUCCESS"
+    #exit 0 (success ane dhaggara zero ivachu but in shell emi ivvakapoina by defalut it will be consider as zero
+fi
 #==================================================================================
