@@ -19,7 +19,7 @@
 # ]# sudo sh 12-installconditions.sh  (ila iste mysql install avuthundi)
 #==================================================================================
 userid=$(id -u)
-if [ $userid -ne 0 ]; then
+if [ $userid -ne 1 ]; then
 echo " Error is please run the script"
 fi
 dnf install mysql -y
