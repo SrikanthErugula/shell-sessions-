@@ -39,13 +39,18 @@
 
 #Practice 3
 
+#echo "Enter a Number"
+#read num
+#if [ $num -gt 10 ] && [ $num -lt 100 ]; then 
+    #echo " The Given Number $num is within range"
+#else 
+    #echo " The given number $num is out of range"
+#fi
+
 echo "Enter a Number"
 read num
-if [ $num -gt 10 ] && [ $num -lt 100 ]; then 
-    echo " The Given Number $num is within range"
-else 
-    echo " The given number $num is out of range"
+if [ $(($num % 2)) -eq 0 ]; then
+echo " The given $num is Prime Number"
+else
+echo " The given $num is Not a Prime Number"
 fi
-
-
-
