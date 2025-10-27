@@ -18,7 +18,7 @@
 
 number=$1
 #echo " Enter a number"
-read number
+#read number
 
 if [ $number -lt 10 ] ; then
     echo " Given number is $number less then 10"
