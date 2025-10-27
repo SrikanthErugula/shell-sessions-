@@ -22,4 +22,4 @@ userid=$(id -u)
 if [ $userid -ne 0 ]; then
 echo " Error is please run the script"
 fi
-
+dnf install mysql -y
