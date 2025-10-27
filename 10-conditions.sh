@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NUMBER=$1 # edhaina value bayata numchi istunte dhani manam ila cmd tho notify cheyali
+#NUMBER=$1 # edhaina value bayata numchi istunte dhani manam ila cmd tho notify cheyali
 
 #if [ $NUMBER -lt 10 ]; then
     echo "Given number $NUMBER is less than 10"
@@ -17,21 +17,17 @@ NUMBER=$1 # edhaina value bayata numchi istunte dhani manam ila cmd tho notify c
 #practice 1
 
 #number=$1
-#if [ $number -lt 10 ] then
+#if [ $number -lt 10 ] ; then
     #echo " Given number is $number less then 10"
 #else
    # echo "Givem number $number is greater then 10"
    # fi
 #Practice 2
 
-echo "Enter a number:"
+echo " Enter a number"
 read num
-
-if [ $num -gt 0 ]; then
-    echo "The number is positive."
-elif [ $num -lt 0 ]; then
-    echo "The number is negative."
-else
-    echo "The number is zero."
-fi
+if [ $(($num % 2)) -eq 0 ]; then 
+    echo " Given number $num is even "
+    else
+    echo " Given number $num is odd "
 
