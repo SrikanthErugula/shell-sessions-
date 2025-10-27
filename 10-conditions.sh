@@ -17,18 +17,21 @@
 #practice 1
 
 #number=$1
-#if [ $number -lt 10 ] ; then
-    #echo " Given number is $number less then 10"
-#else
-   # echo "Givem number $number is greater then 10"
-   # fi
+echo " Enter a number"
+read number
+
+if [ $number -lt 10 ] ; then
+    echo " Given number is $number less then 10"
+else
+    echo "Givem number $number is greater then 10"
+    fi
 #Practice 2
 
-echo " Enter a number"
-read num
-if [ $(($num % 2)) -eq 0 ]; then 
-    echo " Given number $num is even "
-else
-    echo " Given number $num is odd "
-fi
+#echo " Enter a number"
+#read num
+#if [ $(($num % 2)) -eq 0 ]; then 
+ #   echo " Given number $num is even "
+#else
+ #   echo " Given number $num is odd "
+#fi
 
