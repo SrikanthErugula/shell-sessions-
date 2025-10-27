@@ -16,15 +16,16 @@
 
 #practice 1
 
-number=$1
+#number=$1 # idhi commect cheste the below 2 lines ni activate cheyali
 #echo " Enter a number"
 #read number
 
-if [ $number -lt 10 ] ; then
-    echo " Given number is $number less then 10"
-else
-    echo "Givem number $number is greater then 10"
-    fi
+#if [ $number -lt 10 ] ; then
+ #   echo " Given number is $number less then 10"
+#else
+ #   echo "Givem number $number is greater then 10"
+  #  fi
+
 #Practice 2
 
 #echo " Enter a number"
@@ -34,4 +35,14 @@ else
 #else
  #   echo " Given number $num is odd "
 #fi
+
+#Practice 3
+
+echo "Enter a Number"
+read num
+if [ $num -gt 10 ] && [ $num -lt 100 ];
+    echo " The Given Number $num is within range"
+    else 
+    echo " The given number $num is out of range"
+    fi
 
