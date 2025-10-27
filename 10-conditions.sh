@@ -41,7 +41,7 @@
 
 echo "Enter a Number"
 read num
-if [ $num -gt 10 ] && [ $num -lt 100 ] && [ $(($num % 2)) -ep 0 ]; then 
+if [ $num -gt 10 ] && [ $num -lt 100 ]; then 
     echo " The Given Number $num is within range"
 else 
     echo " The given number $num is out of range"
