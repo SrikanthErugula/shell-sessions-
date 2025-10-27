@@ -42,7 +42,7 @@ echo "Enter a Number"
 read num
 if [ $num -gt 10 ] && [ $num -lt 100 ];
     echo " The Given Number $num is within range"
-    else 
+else
     echo " The given number $num is out of range"
-    fi
+fi
 
