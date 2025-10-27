@@ -3,11 +3,11 @@
 #NUMBER=$1 # edhaina value bayata numchi istunte dhani manam ila cmd tho notify cheyali
 
 #if [ $NUMBER -lt 10 ]; then
-    echo "Given number $NUMBER is less than 10"
+    #echo "Given number $NUMBER is less than 10"
 #elif [ $NUMBER -eq 10 ]; then
     #echo "Given number $NUMBER is equal to 10"
 #else
-    echo "Given number $NUMBER is greater than to 10"
+    #echo "Given number $NUMBER is greater than to 10"
 #fi
 
 # -gt ( greater than symbol)
@@ -28,6 +28,7 @@ echo " Enter a number"
 read num
 if [ $(($num % 2)) -eq 0 ]; then 
     echo " Given number $num is even "
-    else
+else
     echo " Given number $num is odd "
+fi
 
