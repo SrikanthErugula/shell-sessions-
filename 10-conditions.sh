@@ -16,8 +16,8 @@
 
 #practice 1
 
-#number=$1
-echo " Enter a number"
+number=$1
+#echo " Enter a number"
 read number
 
 if [ $number -lt 10 ] ; then
