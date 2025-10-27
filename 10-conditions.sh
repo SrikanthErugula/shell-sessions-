@@ -13,6 +13,7 @@
 # -gt ( greater than symbol)
 # -eq (equal symbol)
 # -ne (not equal)
+#-lt less than
 
 #practice 1
 
@@ -40,9 +41,9 @@
 
 echo "Enter a Number"
 read num
-if [ $num -gt 10 ] && [ $num -lt 100 ];
+if [ $num -gt 10 ] && [ $num -lt 100 ]; then 
     echo " The Given Number $num is within range"
-else
+else 
     echo " The given number $num is out of range"
 fi
 
