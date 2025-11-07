@@ -8,7 +8,13 @@
 Person1=SRI
 Person2=Reddy
 
-echo "$Person1 :: Hi $Person2 How are u?"
-echo "$Person2:: Hey $Person1, Fine.. What about you"
-echo "$Person1 :: Fine Thanks, What are you doing now"
-echo "$Person2 :: Nothing $Person1"
+#echo "$Person1 :: Hi $Person2 How are u?"
+#echo "$Person2:: Hey $Person1, Fine.. What about you"
+#echo "$Person1 :: Fine Thanks, What are you doing now"
+#echo "$Person2 :: Nothing $Person1"
+
+# Practice
+echo "$Person1 :: Hi Ram"
+echo "$Person2 :: Hi sri"
+echo "$Person1 :: king"
+echo "$Person2 :: Max"
