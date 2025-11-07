@@ -5,8 +5,8 @@
 #no space before and after =
 # $ symbol use enti ante varibale use chestunam in code so something special kosam use chestam
 
-Person1=SRI
-Person2=Reddy
+Person1=SSS
+Person2=RRR
 
 #echo "$Person1 :: Hi $Person2 How are u?"
 #echo "$Person2:: Hey $Person1, Fine.. What about you"
