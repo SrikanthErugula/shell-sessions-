@@ -5,16 +5,15 @@
 #no space before and after =
 # $ symbol use enti ante varibale use chestunam in code so something special kosam use chestam
 
-Person1=SSS
-Person2=RRR
+Person1=Sri
+Person2=Reddy
 
-#echo "$Person1 :: Hi $Person2 How are u?"
-#echo "$Person2:: Hey $Person1, Fine.. What about you"
-#echo "$Person1 :: Fine Thanks, What are you doing now"
-#echo "$Person2 :: Nothing $Person1"
+echo "$Person1 :: Hi $Person2 How are u?"
+echo "$Person2:: Hey $Person1, Fine.. What about you"
+echo "$Person1 :: Fine Thanks, What are you doing now"
+echo "$Person2 :: Nothing $Person1"
 
 # Practice
-echo "$Person1 :: Hi Ram"
-echo "$Person2 :: Hi sri"
-echo "$Person1 :: king"
-echo "$Person2 :: Max"
+#echo "$Person1 :: Hi Ram"
+#echo "$Person1 :: king"
+#echo "$Person2 :: Max"
