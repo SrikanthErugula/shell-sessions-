@@ -5,7 +5,7 @@
 #[ ec2-user@ip-172-31-28-70 ~/shell-sessions- ]$ cd
 #[ ec2-user@ip-172-31-28-70 ~ ]$ ls -la
 #vim .bashrc 
-#enter the variable with value in this file 
+#enter the variable with value in this file like as below
 #export COURSE="Shell"
 #if u want save the changes in vim give below cmd
 #source .bashrc
