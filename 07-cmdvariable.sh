@@ -1,6 +1,6 @@
 #!/bin/bash
 #ex 1
-DATE=$(date)
+DATE=$(date +%s)
 
 echo "Timestamp is: $DATE"
 
