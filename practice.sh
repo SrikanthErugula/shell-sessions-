@@ -26,3 +26,4 @@ if [ $(($pora % 2 )) -eq 1]; then
     echo " Orey ichhina number $pora anedhi 1 ithe nuvvu ravali "
 else 
     echo " Orey edhava ichhina number $pora anedhi 1 kindhai radhu ra luchha "
+fi
