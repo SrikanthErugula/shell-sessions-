@@ -20,10 +20,12 @@ else
     echo " The given number $S is ODD"
 fi
 
-echo " Rey number chei bee"
-read pora
-if [ $(($pora % 2 )) -eq 1]; then 
-    echo " Orey ichhina number $pora anedhi 1 ithe nuvvu ravali "
+echo " Could you please enter the number here"
+read Sri
+if [ $Sri -lt 100 ]; then
+    echo " The Given Number $Sri is +ve number"
+elif [ $Sri -eq 0 ]; then
+    echo " The Given Number $Sri is 0 number"
 else 
-    echo " Orey edhava ichhina number $pora anedhi 1 kindhai radhu ra luchha "
+    echo " The Given Number $Sri is -ve number"
 fi
