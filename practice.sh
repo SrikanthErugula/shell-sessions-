@@ -19,3 +19,10 @@ if [ $(($S % 2)) -eq 0 ]; then
 else 
     echo " The given number $S is ODD"
 fi
+
+echo " Rey number chei bee"
+read pora
+if [ $(($pora % 2 )) -eq 1]; then 
+    echo " Orey ichhina number $pora anedhi 1 ithe nuvvu ravali "
+else 
+    echo " Orey edhava ichhina number $pora anedhi 1 kindhai radhu ra luchha "
