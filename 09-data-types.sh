@@ -36,5 +36,5 @@ echo "First Leader: ${LEADERS[0]}"  #if u want specific name do like these......
 
 #ex 1
 
-value=("Sri" "Kanth" "Reddy" "Srikanth" "Erugula" "Srikanth Reddy" "Erugula Srikanth Reddy")
+value=("Sri" "Kanth" "Reddy" "Srikanth" "Erugula" "Srikanth-Reddy" "Erugula-Srikanth Reddy")
 echo "All values is : ${value[*]}"
