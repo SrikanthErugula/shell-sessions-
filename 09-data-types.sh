@@ -24,8 +24,8 @@ echo "Totak sum is $SUM"
 #ex 2
 A=333
 B=444
-sum=(($A+$B))
-echo " Gt is $sum"
+sum=$(($A+$B))
+echo " Gt is $sum "
 
 # Size = 4, Max index = 3
 LEADERS=("Modi" "Putin" "Trudo" "Trump")
