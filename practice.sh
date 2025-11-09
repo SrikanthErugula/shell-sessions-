@@ -1,10 +1,21 @@
 #!/bin/bash
 
-Number=$1
-if [ $Number -lt 10 ]; then
-    echo " the given number $Number is less then 10 "
-elif [ $Number -eq 10 ]; then
-    echo " the given number $Number is equal to 10 "
+#Number=$1
+#if [ $Number -lt 10 ]; then
+   # echo " the given number $Number is less then 10 "
+#elif [ $Number -eq 10 ]; then
+   # echo " the given number $Number is equal to 10 "
+#else 
+   # echo " the given number $Number is grater then 10 "
+#fi
+
+#ex 1 on even number 
+
+echo " Please enter the number"
+read S
+
+if [ $(($S%2))]; then
+    echo " The given number $S is EVEN "
 else 
-    echo " the given number $Number is grater then 10 "
+    echo " The given number $S is ODD"
 fi
