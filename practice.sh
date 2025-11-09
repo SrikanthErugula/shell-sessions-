@@ -14,7 +14,7 @@
 echo " Please enter the number"
 read S
 
-if [ $(($S%2)) ]; then
+if [ $(($S % 2)) -ep 0 ]; then
     echo " The given number $S is EVEN "
 else 
     echo " The given number $S is ODD"
