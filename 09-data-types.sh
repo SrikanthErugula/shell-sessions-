@@ -22,10 +22,10 @@ SUM=$(($Add1+$Add2))
 echo "Totak sum is $SUM"
 
 #ex 2
-A=333
-B=444
-sum=$(($A+$B))
-echo " Gt is $sum "
+X=2345
+Y=234567
+sum=$(($X+$Y))
+echo " SO GT IS $sum "
 
 # Size = 4, Max index = 3
 LEADERS=("Modi" "Putin" "Trudo" "Trump")
