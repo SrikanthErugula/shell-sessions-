@@ -21,9 +21,15 @@ Add2=444
 SUM=$(($Add1+$Add2))
 echo "Totak sum is $SUM"
 
+#ex 2
+A=333
+B=444
+sum=(($A+$B))
+echo " Gt is $sum"
+
 # Size = 4, Max index = 3
 LEADERS=("Modi" "Putin" "Trudo" "Trump")
 
 echo "All leaders: ${LEADERS[@]}"
 echo "First Leader: ${LEADERS[0]}"  #if u want specific name do like these......... number ela start avuthai 0 1 2 3 4 
-echo "First Leader: ${LEADERS[10]}" # usually error avstundhi bcz ikkada 10th position ledhu kabbati error is index not found ala 
+#echo "First Leader: ${LEADERS[10]}" # usually error avstundhi bcz ikkada 10th position ledhu kabbati error is index not found ala 
