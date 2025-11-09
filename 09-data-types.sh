@@ -22,8 +22,8 @@ SUM=$(($Add1+$Add2))
 echo "Totak sum is $SUM"
 
 #ex 2
-C=23456787653456789234567234567876543234567898765434567890987654345678909876544578909876543678909876543456789
-I=8765434567234567876543345678234567887654323456778234567890987654323456789009876543234567898765445678987651
+C=2345678765345678923456723456787654323456789876543
+I=87654345672345678765433456782345678876543234567
 sum=$(($C+$I))
 echo "SUM IS $sum"
 
@@ -33,3 +33,8 @@ LEADERS=("Modi" "Putin" "Trudo" "Trump")
 echo "All leaders: ${LEADERS[@]}"
 echo "First Leader: ${LEADERS[0]}"  #if u want specific name do like these......... number ela start avuthai 0 1 2 3 4 
 #echo "First Leader: ${LEADERS[10]}" # usually error avstundhi bcz ikkada 10th position ledhu kabbati error is index not found ala 
+
+#ex 1
+
+value=("Sri" "Kanth" "Reddy" "Srikanth" "Erugula" "Srikanth Reddy" "Erugula Srikanth Reddy")
+echo "All values is : ${value[*]}"
