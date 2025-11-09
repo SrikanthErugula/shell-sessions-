@@ -22,7 +22,7 @@ fi
 
 echo " Could you please enter the number here"
 read Sri
-if [ $Sri -lt 35 ]; then
+if [ $Sri -gt 35 ]; then
     echo " Srikanth got score $Sri so PASS "
 #elif [ $Sri -eq 100 ]; then
     #echo " The Given Number $Sri is 0 number"
