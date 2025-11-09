@@ -38,4 +38,4 @@ echo "First Leader: ${LEADERS[0]}"  #if u want specific name do like these......
 
 value=("Sri" "Kanth" "Reddy" "Srikanth" "Erugula" "Srikanth-Reddy" "Erugula-Srikanth_Reddy")
 echo "All values is : ${value[*]}"
-echo "4th value is : ${value[6]}"
+echo "4th value is : ${value[6]}" # "Erugula-Srikanth_Reddy" idhi print avuthundhii
