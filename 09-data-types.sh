@@ -14,6 +14,13 @@ SUM=$(($NUMBER1+$NUMBER2+$NAME)) # so ila run cheste only additon operation jari
 
 echo "SUM is: ${SUM}"
 
+# ex 1
+Add1=222
+Add2=444
+
+SUM=$(($Add1+$Add2))
+echo "Totak sum is $SUM"
+
 # Size = 4, Max index = 3
 LEADERS=("Modi" "Putin" "Trudo" "Trump")
 
