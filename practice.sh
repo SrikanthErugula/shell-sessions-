@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Number=100
+Number=$1
 if [ $Number -lt 10 ]; then
     echo " the given number is less then 10 "
 elif [ $Number -eq 10 ]; then
