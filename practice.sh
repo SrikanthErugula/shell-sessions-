@@ -7,4 +7,4 @@ elif [ $Number -eq 10 ]; then
     echo " the given number is equal to 10 "
 else 
     echo " the given number is grater then 10 "
-
+fi
