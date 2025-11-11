@@ -37,11 +37,11 @@ if [ $userid -ne 0 ]; then
     exit 1
 fi
 
-dnf install mysql -y
+dnf remove mysql -y
 
 if [ $? -ne 0 ]; then 
-    echo " ERROR::mysql install process fail"
+    echo " ERROR::mysql remove process fail"
     exit 1
 else
-    echo " Mysql install porcess sucess"
+    echo " Mysql remove porcess sucess"
 fi
