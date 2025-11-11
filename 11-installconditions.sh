@@ -2,14 +2,14 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0 ]; then
+if [ $USERID -ne 0 ]; then # userid zero ki equla kakapothe ani meaning
     echo "ERROR:: Please run this script with root privelege"
     exit 1 # failure is other than 0 ( it means failure ane dhani dhaggara zero kakunda emaina ivvachu )
 fi
 
 dnf install mysql -y
 
-if [ $? -ne 0 ]; then
+if [ $? -ne 0 ]; then # exit status zero ki equal kakapothe 
   echo "ERROR:: Installing MySQL is failure"
    exit 1
 else
