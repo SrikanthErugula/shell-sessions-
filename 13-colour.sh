@@ -4,5 +4,5 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-echo -e "$G Hello World $N"
+echo -e "$G Hello World $N" # here $N eduku ante colour anedhi ichina word ki matrame ravali next vunde vatiki ravadhu ani
 echo "Check this color"
