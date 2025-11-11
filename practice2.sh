@@ -6,10 +6,16 @@ if [ $sriuser -ne 0 ]; then
     echo " ERROR :: Please run this CMD with root user "
     exit 1
 fi
-dnf remove mysql -y
-if [ $? -ne 0 ]; then
-    echo " Install mysql is FAIL "
+Reddy(){
+    if [ $1 -ne 0 ]; then
+    echo " Install $2 is FAIL "
     exit 1
-else
-     echo " remove mysql is SUCCESS"
+  else
+     echo " install $2 is SUCCESS"
 fi
+}
+dnf install mysql -y
+Reddy $? " MySQLllll"
+dnf install nginx -y
+Reddy $? " Nginxxxx" 
+
