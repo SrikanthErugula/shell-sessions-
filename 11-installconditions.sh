@@ -18,4 +18,4 @@ else
 fi
 # sudo sh 12-installconditions.sh  (ila iste mysql install avuthundi)
 # if uwant install some other server at a time then u have to use function datatype
-#==================================================================================
+#=================================================================================

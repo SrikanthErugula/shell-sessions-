@@ -30,3 +30,16 @@ if [ $Sri -gt 35 ]; then
 else 
     echo " Srikanth got score $Sri so FAIL"
 fi
+
+userid=$(id -u)
+if [ $userid -ne 0]; then 
+    echo " Please run with root user"
+fi
+
+dnf install mysql -y
+
+if [ $? -ne 0]; then 
+    echo " mysql install process fail"
+else
+    echo " Mysql install porcess sucess"
+fi
