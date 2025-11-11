@@ -11,5 +11,5 @@ if [ $? -ne 0 ]; then
     echo " Install mysql is FAIL "
     exit 1
 else
-     echo " Install mysql is SUCCESS"
+     echo " remove mysql is SUCCESS"
 fi
