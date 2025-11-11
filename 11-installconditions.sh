@@ -9,7 +9,7 @@ fi
 
 dnf install mysql -y
 
-if [ $? -ne 0 ]; then # exit status zero ki equal kakapothe 
+if [ $? -ne 0 ]; then # exit status($?) zero ki equal kakapothe 
   echo "ERROR:: Installing MySQL is failure"
    exit 1
 else

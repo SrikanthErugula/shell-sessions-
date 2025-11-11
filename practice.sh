@@ -33,14 +33,14 @@ fi
 
 userid=$(id -u)
 if [ $userid -ne 0 ]; then 
-    echo " Please run with root user"
+    echo " ERROR::Please run with root user"
     exit 1
 fi
 
 dnf install mysql -y
 
 if [ $? -ne 0 ]; then 
-    echo " mysql install process fail"
+    echo " ERROR::mysql install process fail"
     exit 1
 else
     echo " Mysql install porcess sucess"
