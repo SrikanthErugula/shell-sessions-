@@ -10,15 +10,13 @@ if [ $variuser -ne 0 ]; then
     echo " ERROR:: please run with root user "
     exit 1
 fi
-Sri(){
-    if [ $1 -ne 0 ]; then
-    echo -e "installing $2 is.... $R FAIl $N"
-    exit 1
+SRI(){
+if [ $1 -ne o ]; then
+    echo -e " $R Installing $2 is FAIL $N"
 else
-    echo -e "installing $2 is.... $G Success $N"
-fi
+    echo -e "$G Installing $2 is SUCCESS $N"
 }
+fi
+
 dnf install mysql -y
-Sri $? "Mysql"
-dnf install nginx -y
-Sri $? "Nginx"
+SRI $? "MYSQL"
