@@ -10,7 +10,7 @@ if [ $variuser -ne 0 ]; then
     exit 1
 fi
 dnf install -y
-if [ $? - ne 0 ]: then
+if [ $? - ne 0 ]; then
     echo " install mysql is $R FAIl $N "
     exit 1
 else
