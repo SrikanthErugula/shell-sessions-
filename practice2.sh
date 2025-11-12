@@ -1,8 +1,9 @@
 #!/bin/bash
 
 variuser=$(id -u)
-R="]e[31m"
-G="\e[33m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
 
 if [ $variuser -ne 0 ]; then 
@@ -10,7 +11,7 @@ if [ $variuser -ne 0 ]; then
     exit 1
 fi
 dnf install -y
-if [ $? - ne 0 ]; then
+if [ $? -ne 0 ]; then
     echo " install mysql is $R FAIl $N "
     exit 1
 else
