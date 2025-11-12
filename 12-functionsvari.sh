@@ -12,7 +12,7 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
         echo "ERROR:: Installing $2 is failure" # so here $2 value anedhi MYSQL ane value vunttadhi adhi below fun call chesam like "MYSQL" ani
         exit 1
     else
-        echo "Installing $2 is SUCCESS"
+        echo "Installing $2 is SUCCESS" # so here $2 value anedhi MYSQL ane value vunttadhi adhi below fun call chesam like "MYSQL" ani
     fi
 }
 
