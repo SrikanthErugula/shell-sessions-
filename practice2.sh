@@ -15,8 +15,9 @@ if [ $1 -ne o ]; then
     echo -e " $R Installing $2 is FAIL $N"
 else
     echo -e "$G Installing $2 is SUCCESS $N"
-}
 fi
+}
+
 
 dnf install mysql -y
 SRI $? "MYSQL"
