@@ -31,5 +31,5 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
 
 for package in $@
 do
-    echo "Sri output is $package"
+    echo "Package is $package"
 done
