@@ -1,6 +1,10 @@
 #!/bin/bash
+# Iterating from 1 to 5 (inclusive) with a step of 1
+for i in {1..5}; do
+  echo "Iteration $i"
+done
 
-for i in {1...20}
-do
-    echo $i
+# Iterating from 1 to 5 with a step of 2
+for i in {1..5..2}; do
+  echo "Iteration $i"
 done
