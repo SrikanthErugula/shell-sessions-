@@ -8,3 +8,7 @@ done
 for i in {1..5..2}; do
   echo "Iteration $i"
 done
+for variable_name in item1 item2 item3; do
+  # Commands to execute for each item
+  echo "Current item: $variable_name"
+done
