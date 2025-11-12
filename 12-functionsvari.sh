@@ -8,8 +8,8 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){ # functions receive inputs through args just like shell script args
-    if [ $1 -ne 0 ]; then
-        echo "ERROR:: Installing $2 is failure"
+    if [ $1 -ne 0 ]; then # so here $1 value anedhi ($?) status code value tisukunttadhi adhi below validate $? ichham akkada numchi vastunshi
+        echo "ERROR:: Installing $2 is failure" # so here $2 value anedhi MYSQL ane value vunttadhi adhi below fun call chesam like "MYSQL" ani
         exit 1
     else
         echo "Installing $2 is SUCCESS"
