@@ -25,6 +25,6 @@ dnf list installed mysql
 if [ $? -ne 0 ]; then
     dnf remove mysql -y
     VALIDATE $? "MySQL"
-#else
-    #echo -e "MySQL already exist ... $Y SKIPPING $N"
+else
+    echo -e "MySQL already exist ... $Y SKIPPING $N"
 fi
