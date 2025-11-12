@@ -24,3 +24,5 @@ VALIDATE $? "Nginx"
 
 dnf install python3 -y
 VALIDATE $? "python3"
+
+#$2 values scrpit run avuthunte one by one tisukunttadhi like "MYSQL" after done next "Nginx" and "Python3" ala process vunttadhi
