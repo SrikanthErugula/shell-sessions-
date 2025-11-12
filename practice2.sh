@@ -12,6 +12,7 @@ fi
 dnf install -y
 if [ $? - ne 0 ]: then
     echo " install mysql is $R FAIl $N "
+    exit 1
 else
     echo " install mysql is $G Success $N "
 fi
