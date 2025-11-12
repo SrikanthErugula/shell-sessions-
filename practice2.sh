@@ -1,21 +1,17 @@
 #!/bin/bash
 
-sriuser=$(id -u)
+variuser=$(id -u)
+R="]e[31m"
+G="\e[33m"
+N="\e[0m"
 
-if [ $sriuser -ne 0 ]; then
-    echo " ERROR :: Please run this CMD with root user "
+if [ $variuser -ne 0 ]; then 
+    echo " ERROR:: please run with root user "
     exit 1
 fi
-Reddy(){
-    if [ $1 -ne 0 ]; then
-    echo " Install $2 is FAIL "
-    exit 1
-  else
-     echo " install $2 is SUCCESS"
+dnf install -y
+if [ $? - ne 0 ]: then
+    echo " install mysql is $R FAIl $N "
+else
+    echo " install mysql is $G Success $N "
 fi
-}
-dnf install mysql -y
-Reddy $? " MySQLllll"
-dnf install nginx -y
-Reddy $? " Nginxxxx" 
-
