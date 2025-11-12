@@ -10,7 +10,7 @@ if [ $variuser -ne 0 ]; then
     echo " ERROR:: please run with root user "
     exit 1
 fi
-dnf install -y
+dnf install mysql -y
 if [ $? -ne 0 ]; then
     echo " install mysql is $R FAIl $N "
     exit 1
