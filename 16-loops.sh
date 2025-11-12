@@ -12,3 +12,6 @@ for variable_name in item1 item2 item3; do
   # Commands to execute for each item
   echo "Current item: $variable_name"
 done
+for ((i=1; i<=5; i++)); do
+  echo "Count: $i"
+done
