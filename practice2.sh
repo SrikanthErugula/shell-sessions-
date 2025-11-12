@@ -14,7 +14,7 @@ SRI(){
 if [ $1 -ne 0 ]; then
     echo -e " Installing $2 is $R FAIL $N"
 else
-    echo -e "Installing $2 is $G SUCCESS $N"
+    echo -e "Installing $2 is $G              SUCCESS $N"
 fi
 }
 
