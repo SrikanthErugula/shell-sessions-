@@ -11,10 +11,10 @@ if [ $variuser -ne 0 ]; then
     exit 1
 fi
 SRI(){
-if [ $1 -ne o ]; then
-    echo -e " $R Installing $2 is FAIL $N"
+if [ $1 -ne 0 ]; then
+    echo -e " Installing $2 is $R FAIL $N"
 else
-    echo -e "$G Installing $2 is SUCCESS $N"
+    echo -e "Installing $2 is $G SUCCESS $N"
 fi
 }
 
