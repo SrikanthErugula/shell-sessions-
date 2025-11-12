@@ -12,13 +12,13 @@ if [ $variuser -ne 0 ]; then
 fi
 Sri(){
     if [ $1 -ne 0 ]; then
-    echo " install $2 is $R FAIl $N "
+    echo " removal $2 is $R FAIl $N "
     exit 1
 else
-    echo " install $2 is $G Success $N "
+    echo " removal $2 is $G Success $N "
 fi
 }
-dnf install mysql -y
+dnf remove mysql -y
 Sri $? "Mysql"
-dnf install nginx -y
+dnf remove nginx -y
 Sri $? "Nginx"
