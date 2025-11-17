@@ -64,7 +64,7 @@ VALIDATE $? " UNZIP CATA CODE"
 npm install &>>$LOG_FILE
 VALIDATE $? " INSTALL DEPENDECIES"
 
-cp $SCRIPT_DIR/cataservice.repo /etc/systemd/system/catalogue.service &>>$LOG_FILE
+cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service &>>$LOG_FILE
 VALIDATE $? " COPYING SYSTEM CATA CODE SERVICES"
 
 systemctl daemon-reload
