@@ -81,7 +81,7 @@ VALIDATE $? " COPY MONGO REPO CODE"
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? " INSTALL MONGODB CLIENT"
 
-mongosh --host $MONGODB_HOST </app/db/master-data.js &>>$LOG_FILE
+mongosh --host $MONGODB_HOST /app/db/master-data.js &>>$LOG_FILE
 VALIDATE $? " LOAD CATA PRODUCTS"
 
 systemctl restart cata &>>$LOG_FILE
