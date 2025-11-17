@@ -9,7 +9,7 @@ N="\e[0m"
 LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 SCRIPT_DIR=$PWD
-MONGODB_HOST=mongodb.dsoaws.fun
+MONGODB_HOST=172.31.73.248
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 
 mkdir -p $LOGS_FOLDER
@@ -81,7 +81,7 @@ VALIDATE $? " COPY MONGO REPO CODE"
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? " INSTALL MONGODB CLIENT"
 
-mongosh --host $MONGODB_HOST /app/db/master-data.js &>>$LOG_FILE
+mongosh --host $MONGODB_HOST </app/db/master-data.js &>>$LOG_FILE
 VALIDATE $? " LOAD CATA PRODUCTS"
 
 systemctl restart cata &>>$LOG_FILE
