@@ -53,7 +53,7 @@ VALIDATE $? " UNZIP CATA CODE"
 
 npm install &>>$LOG_FILE
 VALIDATE $? " INSTALL DEPENDECIES"
-cp $SCRIPT_DIR/cataservice.repo /etc/systemd/system/catalogue.service
+cp $SCRIPT_DIR/cataservice.repo /etc/systemd/system/catalogue.service &>>$LOG_FILE
 VALIDATE $? " COPYING SYSTEM CATA CODE SERVICES"
 
 systemctl daemon-reload
@@ -63,7 +63,7 @@ VALIDATE $? " ENEBLING CATA INSTACES"
 
 systemctl start catalogue &>>$LOG_FILE
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? " COPY MONGO REPO CODE"
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? " INSTALL MONGODB CLIENT"
