@@ -1,19 +1,16 @@
 #!/bin/bash
 
-set -euo pipefail
-
-trap 'echo "There is an error in $LINENO, Command is: $BASH_COMMAND"' ERR
-
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+trap 'echo "There is an error in $LINENO, Command is: $BASH_COMMAND"' ERR
 LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 SCRIPT_DIR=$PWD
-MONGODB_HOST=mongodb.daws86s.fun
+MO=172.31.73.248
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 
 mkdir -p $LOGS_FOLDER
@@ -24,39 +21,60 @@ if [ $USERID -ne 0 ]; then
     exit 1 # failure is other than 0
 fi
 
-##### NodeJS ####
+
+######## NODE JS #####
 dnf module disable nodejs -y &>>$LOG_FILE
-dnf module enable nodejs:20 -y  &>>$LOG_FILE
+
+
+dnf module enable nodejs:20 -y &>>$LOG_FILE
+
 dnf install nodejs -y &>>$LOG_FILE
-echo -e "Installing NodeJS 20 ... $G SUCCESS $N"
+
 
 id roboshop &>>$LOG_FILE
 if [ $? -ne 0 ]; then
-    useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop &>>$LOG_FILE
+    useradd --system --home /app --shell /s VALIDATE $? " CREATING SYSTEM USER"
 else
-    echo -e "User already exist ... $Y SKIPPING $N"
+    echo -e " User already exist...... $Y SKIPPING $N"
 fi
 
 mkdir -p /app
+
+
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>$LOG_FILE
+
+
 cd /app 
+
+
 rm -rf /app/*
+
+
 unzip /tmp/catalogue.zip &>>$LOG_FILE
+
+
 npm install &>>$LOG_FILE
-cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
+
+
+cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service &>>$LOG_FILE
+
+
 systemctl daemon-reload
+
+
 systemctl enable catalogue &>>$LOG_FILE
-echo -e "Catalogue application setup ... $G SUCCESS $N"
+
+
+systemctl start catalogue &>>$LOG_FILE
 
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
-dnf install mongodb-mongoshsfds -y &>>$LOG_FILE
 
-INDEX=$(mongosh mongodb.daws86s.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')")
-if [ $INDEX -le 0 ]; then
-    mongosh --host $MONGODB_HOST </app/db/master-data.js &>>$LOG_FILE
-else
-    echo -e "Catalogue products already loaded ... $Y SKIPPING $N"
-fi
 
-systemctl restart catalogue
-echo -e "Loading products and restarting catalogue ... $G SUCCESS $N"
+dnf install mongodb-mongosh -y &>>$LOG_FILE
+
+
+mongosh --host $MO </app/db/master-data.js &>>$LOG_FILE
+    
+
+systemctl restart cata &>>$LOG_FILE
+
