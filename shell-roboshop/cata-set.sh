@@ -73,8 +73,8 @@ cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 
 
-mongosh --host $MO < /app/db/master-data.js &>> $LOG_FILE
+mongosh --host$MO < /app/db/master-data.js &>>$LOG_FILE
     
 
-systemctl restart cata &>> $LOG_FILE
+systemctl restart cata &>>$LOG_FILE
 
