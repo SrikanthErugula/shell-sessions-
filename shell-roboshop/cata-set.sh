@@ -10,7 +10,7 @@ trap 'echo "There is an error in $LINENO, Command is: $BASH_COMMAND"' ERR
 LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 SCRIPT_DIR=$PWD
-MO=172.31.73.248
+S=mongodb.dsoaws.fun
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 
 mkdir -p $LOGS_FOLDER
@@ -73,8 +73,9 @@ cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 
 
-mongosh --host$MO </app/db/master-data.js &>>$LOG_FILE
+#mongosh --host$MO </app/db/master-data.js &>>$LOG_FILE
+mongosh --host $S </app/db/master-data.js
     
 
-systemctl restart cata &>>$LOG_FILE
+systemctl restart catalogue &>>$LOG_FILE
 
