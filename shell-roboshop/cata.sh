@@ -51,18 +51,25 @@ VALIDATE $? " CREATING APP DIR" &>>$LOG_FILE
 
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>$LOG_FILE
 VALIDATE $? " DOWNLOADING CATA CODE"
+
 cd /app 
 VALIDATE $? "CHAGING TO APP DIR"
+
+rm -rf /app/*
+VALIDATE $? "Removing exist code"
+
 unzip /tmp/catalogue.zip &>>$LOG_FILE
 VALIDATE $? " UNZIP CATA CODE"
 
 npm install &>>$LOG_FILE
 VALIDATE $? " INSTALL DEPENDECIES"
+
 cp $SCRIPT_DIR/cataservice.repo /etc/systemd/system/catalogue.service &>>$LOG_FILE
 VALIDATE $? " COPYING SYSTEM CATA CODE SERVICES"
 
 systemctl daemon-reload
 VALIDATE $? "DAEMON REALODED "
+
 systemctl enable catalogue &>>$LOG_FILE
 VALIDATE $? " ENEBLING CATA INSTACES"
 
@@ -70,10 +77,12 @@ systemctl start catalogue &>>$LOG_FILE
 
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? " COPY MONGO REPO CODE"
+
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? " INSTALL MONGODB CLIENT"
 
 mongosh --host $MONGO_PVTIP </app/db/master-data.js
 VALIDATE $? " LOAD CATA PRODUCTS"
+
 systemctl restart cata &>>$LOG_FILE
 VALIDATE $? " RESATARTING CATA"
