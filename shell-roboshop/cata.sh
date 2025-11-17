@@ -8,6 +8,7 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
+SCRIPT_DIR=$PWD
 MONGO_PVTIP=mangodb.dsoaws.fun
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 
@@ -41,9 +42,9 @@ useradd --system --home /app --shell /sbin/nologin --comment "roboshop system us
 VALIDATE $? " CREATING SYSTEM USER"
 
 mkdir /app 
-VALIDATE $? " CREATING APP DIR"
+VALIDATE $? " CREATING APP DIR" &>>$LOG_FILE
 
-curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
+curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>$LOG_FILE
 VALIDATE $? " DOWNLOADING CATA CODE"
 cd /app 
 VALIDATE $? "CHAGING TO APP DIR"
@@ -52,7 +53,7 @@ VALIDATE $? " UNZIP CATA CODE"
 
 npm install &>>$LOG_FILE
 VALIDATE $? " INSTALL DEPENDECIES"
-cp cataservice.repo /etc/systemd/system/catalogue.service
+cp $SCRIPT_DIR/cataservice.repo /etc/systemd/system/catalogue.service
 VALIDATE $? " COPYING SYSTEM CATA CODE SERVICES"
 
 systemctl daemon-reload
