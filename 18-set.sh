@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#set -e # e for exit
+set -e # e for exit
 
 # error(){
 #     echo "There is an error in $LINENO, Command is: $BASH_COMMAND"
