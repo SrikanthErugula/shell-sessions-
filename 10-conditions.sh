@@ -54,3 +54,5 @@ echo " The given $num is Prime Number"
 else
 echo " The given $num is Not a Prime Number"
 fi
+
+
