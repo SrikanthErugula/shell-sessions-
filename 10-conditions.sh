@@ -47,6 +47,8 @@
     #echo " The given number $num is out of range"
 #fi
 
+# decision tisukovali ante manaki if condition kavali
+
 echo "Enter a Number"
 read num
 if [ $(($num % 2)) -eq 0 ]; then
