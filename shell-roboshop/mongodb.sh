@@ -45,3 +45,5 @@ VALIDATE $? "Allowing remote connections to MongoDB"
 
 systemctl restart mongod &>>$LOG_FILE
 VALIDATE $? "Restarted MongoDB"
+
+#[ ec2-user@ip-172-31-65-80 ~/shell-sessions-/shell-roboshop ]$ less /var/log/shell-roboshop/catalogue.log   ------- to check logs 
