@@ -65,7 +65,7 @@ VALIDATE $? "Enable done"
 systemctl start catalogue &>>$LOG_FILE
 VALIDATE $? "Started"
 
-cp srimongo /etc/yum.repos.d/mongo.repo 
+cp $SCRIPT_DIR/srimongo /etc/yum.repos.d/mongo.repo 
 VALIDATE $? "copied the mongorepo"
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? "Installed client repo"
