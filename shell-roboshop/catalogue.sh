@@ -55,7 +55,7 @@ VALIDATE $? "Unzipped Catalogue data or application "
 npm install &>>$LOG_FILE
 VALIDATE $? "installed the Dependencies"
 
-cp catalogue.service /etc/systemd/system/catalogue.service &>>$LOG_FILE
+cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service &>>$LOG_FILE
 VALIDATE $? "Copied systemctl services"
 
 systemctl daemon-reload
