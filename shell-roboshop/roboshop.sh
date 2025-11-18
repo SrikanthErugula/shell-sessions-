@@ -16,7 +16,7 @@ else
     RECORD_NAME="$DOMAIN_NAME" # daws86s.fun bcz frontend ithe manaki only ip address chalu 
 fi
 echo " $instance : $IP "
-done
+
 ### records update cheyali 
 aws route53 change-resource-record-sets \
     --hosted-zone-id $ZONE_ID \
@@ -36,3 +36,4 @@ aws route53 change-resource-record-sets \
         }]
     }
     '
+done
