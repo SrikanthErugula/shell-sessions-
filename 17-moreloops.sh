@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Session 17
+
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
