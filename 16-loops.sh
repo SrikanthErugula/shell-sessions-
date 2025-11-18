@@ -8,6 +8,6 @@ done
 #for Sri in {1..50}; do
 #echo " the given numbers are $Sri"
 #done
-for E in {1..5..100}do
+for E in {1..5..100} do
 echo "$E"
 done
