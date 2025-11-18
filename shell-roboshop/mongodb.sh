@@ -1,4 +1,5 @@
 #!/bin/bash
+#session 17
 
 USERID=$(id -u)
 R="\e[31m"

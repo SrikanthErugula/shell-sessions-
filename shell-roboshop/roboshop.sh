@@ -1,4 +1,6 @@
 #!/bin/bash
+#session 17
+
 AMI_ID="ami-09c813fb71547fc4f"
 SG_ID="sg-05184d3f3e9b3610f" # replace with your SG ID
 ZONE_ID="Z0508801ITHFU9ARNA74" # replace with your ID
