@@ -81,7 +81,9 @@ VALIDATE $? "copied the mongorepo"
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? "Installed client repo"
 
-mongosh --host $MIP </app/db/master-data.js &>>$LOG_FILE
+#mongosh --host $MIP </app/db/master-data.js &>>$LOG_FILE
+mongosh --host $MIP </app/db/master-data.js
+mongosh --host $MIP
 VALIDATE $? "Load cata products"
 sytemctl restart catalogue
 VALIDATE $? "Restarted FINAL"
