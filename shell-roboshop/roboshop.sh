@@ -10,12 +10,12 @@ do
  Instaid=$(aws ec2 run-instances --image-id $AMI_ID  --instance-type t3.micro --security-group-ids $SG_ID  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$instance}]" --query 'Instances[0].InstanceId' --output text) # single code vunte work avvadhu so andhuke "" ivvali at ResourceTyp
 if [ $instance != "frontend" ]; then # frontend kakapothe will get private ip else frontend ite will get pubile ip 
     IP=$(aws ec2 describe-instances --instance-ids $Instaid  --query 'Reservations[0].Instances[0].PrivateIpAddress' --output text)
-    RECORD_NAME="$instace.$DOMAIN_NAME" #  bcz frontend kakapothe manaki ila kavali ex mongodb.dsoaws.fun
+    RECORD_NAME="$instance.$DOMAIN_NAME" #  bcz frontend kakapothe manaki ila kavali ex mongodb.dsoaws.fun
 else
     IP=$(aws ec2 describe-instances --instance-ids $Instaid  --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
     RECORD_NAME="$DOMAIN_NAME" # daws86s.fun bcz frontend ithe manaki only ip address chalu 
 fi
-echo " $instance : $IP "
+echo "$instance : $IP"
 
 ### records update cheyali 
 aws route53 change-resource-record-sets \
