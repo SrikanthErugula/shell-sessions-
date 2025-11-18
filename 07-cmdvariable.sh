@@ -1,4 +1,5 @@
 #!/bin/bash
+# session 15
 #ex 1
 DATE=$(date +%y)
 

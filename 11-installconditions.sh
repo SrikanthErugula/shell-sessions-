@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# session 16
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then # userid zero ki equla kakapothe ani meaning

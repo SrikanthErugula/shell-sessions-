@@ -1,4 +1,5 @@
 #!/bin/bash
+# session 15
 # so here AWS ec2 instance oka ane server loki ec2-user ane name ichhi login avuthunnam lopala shell script code run 
 # chestunnam like sh ani ichhi so final ga ec2-user anedhi oka parent shell script ki..........aws server oka parent ec2-user ki 
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# session 15
 # everything in shell is considerd as string
 NUMBER1=100
 NUMBER2=200

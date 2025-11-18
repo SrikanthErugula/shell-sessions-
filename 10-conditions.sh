@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# session 16
 #NUMBER=$1 # edhaina value bayata numchi istunte dhani manam ila cmd tho notify cheyali
 
 #if [ $NUMBER -lt 10 ]; then

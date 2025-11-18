@@ -1,4 +1,5 @@
 #!/bin/bash
+# session 14
 # variable names eppudu kuda a meaningful ga vundali ante ardham ayyala vundali, 
 # Arguments bayata numchi pass cheyatum ante manaki nachhina names bayata numci ayina pass cheeyachhu
 # in every script lo this type of option vunttadhi,manam enni ayina pass cheyachhu like $1,$2,$3......$n mana istum 
