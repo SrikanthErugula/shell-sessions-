@@ -86,5 +86,3 @@ VALIDATE $? "Load cata products"
 sytemctl restart catalogue
 VALIDATE $? "Restarted FINAL"
 
-# need to run the script
-
