@@ -10,7 +10,7 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-sessions-"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/15-log.log
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/15-log.log [[ ec2-user@ip-172-31-65-80 ~/shell-sessions-/shell-roboshop ]$ less /var/log/shell-roboshop/catalogue.log   ------- to check logs ]
 
 mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE
