@@ -38,7 +38,7 @@ VALIDATE $? "Enabled nodejs"
 dnf install nodejs -y &>>$LOG_FILE
 VALIDATE $? "Installed nodejs"
 
-id roboshop
+id roboshop &>>$LOG_FILE # 2nd time run cheste error vastundhi endhulu ante user already exist so andhuke if condition 
 if [ $? -ne 0 ]; then
 
     useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop &>>$LOG_FILE
@@ -48,7 +48,7 @@ else
 fi
 
 
-mkdir -p /app 
+mkdir -p /app # -p endhuku ante folder vunte skip avuthundi ledhnate create chestundhi
 
 VALIDATE $? "Created app DIR"
 
@@ -56,6 +56,9 @@ curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue
 VALIDATE $? "Downloaded the cata application"
 cd /app 
 VALIDATE $? "Changed the app DIR"
+
+rm -rf /app/* # 2nd time run chestunte code anedhi change avuthundhi so exist vunna code ni delete chesi new code ni unzio cheyali andhuke * anedhi use chesam
+VALIDATE $? "Removed exist code "
 
 unzip /tmp/catalogue.zip &>>$LOG_FILE
 VALIDATE $? "Unzipped Catalogue data or application "
