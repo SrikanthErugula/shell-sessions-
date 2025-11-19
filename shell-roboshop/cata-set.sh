@@ -56,7 +56,7 @@ unzip /tmp/catalogue.zip &>>$LOG_FILE
 npm install &>>$LOG_FILE
 
 
-cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service &>>$LOG_FILE
+cp $SCRIPT_DIR/catalogue.repo /etc/systemd/system/catalogue.service &>>$LOG_FILE
 
 
 systemctl daemon-reload
