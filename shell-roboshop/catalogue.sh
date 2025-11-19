@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#session 18
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -63,7 +63,7 @@ VALIDATE $? "unzip catalogue"
 npm install &>>$LOG_FILE
 VALIDATE $? "Install dependencies"
 
-cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
+cp $SCRIPT_DIR/catalogue.repo /etc/systemd/system/catalogue.service
 VALIDATE $? "Copy systemctl service"
 
 systemctl daemon-reload
@@ -76,14 +76,14 @@ VALIDATE $? "Copy mongo repo"
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? "Install MongoDB client"
 #cp $SCRIPT_DIR/sri.repo /etc/nginx/nginx.conf &>>$LOG_FILE
-VALIDATE $? "sri repo copying "
-INDEX=$(mongosh mongodb.daws86s.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')")
-if [ $INDEX -le 0 ]; then
+#VALIDATE $? "sri repo copying "
+#INDEX=$(mongosh mongodb.daws86s.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')")
+#if [ $INDEX -le 0 ]; then
 mongosh --host $MONGODB_HOST </app/db/master-data.js &>>$LOG_FILE
 VALIDATE $? "Load catalogue products"
-else
-    echo -e "Catalogue products already loaded ... $Y SKIPPING $N"
-fi
+#else
+  #  echo -e "Catalogue products already loaded ... $Y SKIPPING $N"
+#fi
 #mongosh --host $MONGODB_HOST
 
 systemctl restart catalogue
