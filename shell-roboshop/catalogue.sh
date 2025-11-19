@@ -1,15 +1,14 @@
 #!/bin/bash
-#session 18
+#session 19
+
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGS_FOLDER="/var/log/shell-roboshop"
+LOGS_FOLDER="/var/log/shell-roboshop" # ikkada name chudali okksari 
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-SCRIPT_DIR=$PWD
-MONGODB_HOST=mongodb.dsoaws.fun
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 
 mkdir -p $LOGS_FOLDER
@@ -29,13 +28,13 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
     fi
 }
 
-##### NodeJS ####
-dnf module disable nodejs -y &>>$LOG_FILE
-VALIDATE $? "Disabling NodeJS"
-dnf module enable nodejs:20 -y  &>>$LOG_FILE
-VALIDATE $? "Enabling NodeJS 20"
-dnf install nodejs -y &>>$LOG_FILE
-VALIDATE $? "Installing NodeJS"
+   dnf module disable nodejs -y &>>$LOG_FILE
+    VALIDATE $? "Disabling NodeJS"
+    dnf module enable nodejs:20 -y  &>>$LOG_FILE
+    VALIDATE $? "Enabling NodeJS 20"
+    dnf install nodejs -y &>>$LOG_FILE
+    VALIDATE $? "Installing NodeJS"
+
 
 id roboshop &>>$LOG_FILE
 if [ $? -ne 0 ]; then
@@ -46,22 +45,23 @@ else
 fi
 
 mkdir -p /app
-VALIDATE $? "Creating app directory"
+    VALIDATE $? "Creating app directory"
 
-curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>$LOG_FILE
-VALIDATE $? "Downloading catalogue application"
+    curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>$LOG_FILE
+    VALIDATE $? "Downloading catalogue application"
 
-cd /app 
-VALIDATE $? "Changing to app directory"
+    cd /app 
+    VALIDATE $? "Changing to app directory"
 
-rm -rf /app/*
-VALIDATE $? "Removing existing code"
+    rm -rf /app/*
+    VALIDATE $? "Removing existing code"
 
-unzip /tmp/catalogue.zip &>>$LOG_FILE
-VALIDATE $? "unzip catalogue"
+    unzip /tmp/catalogue.zip &>>$LOG_FILE
+    VALIDATE $? "unzip catalogue"
 
-npm install &>>$LOG_FILE
-VALIDATE $? "Install dependencies"
+     npm install &>>$LOG_FILE
+    VALIDATE $? "Install dependencies"
+
 
 cp $SCRIPT_DIR/catalogue.repo /etc/systemd/system/catalogue.service
 VALIDATE $? "Copy systemctl service"
