@@ -75,11 +75,12 @@ VALIDATE $? "Copy mongo repo"
 
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? "Install MongoDB client"
-
+cp $SCRIPT_DIR/sri.repo /etc/nginx/nginx.conf &>>$LOG_FILE
+VALIDATE $? "sri repo copying "
 #INDEX=$(mongosh mongodb.daws86s.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')")
 #if [ $INDEX -le 0 ]; then
 mongosh --host $MONGODB_HOST </app/db/master-data.js &>>$LOG_FILE
-#VALIDATE $? "Load catalogue products"
+VALIDATE $? "Load catalogue products"
 #else
     #echo -e "Catalogue products already loaded ... $Y SKIPPING $N"
 #fi
