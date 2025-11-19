@@ -10,6 +10,7 @@ LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 SCRIPT_DIR=$PWD
 START_TIME=$(date +%s)
+END_TIME=$(date +%s)
 MONGODB_HOST=mongodb.dsoaws.fun
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 
@@ -49,8 +50,8 @@ fi
 mkdir -p /app
 VALIDATE $? "Creating app directory"
 
-curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip &>>$LOG_FILE
-VALIDATE $? "Downloading user application"
+curl -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip &>>$LOG_FILE
+VALIDATE $? "Downloading cart application"
 
 cd /app 
 VALIDATE $? "Changing to app directory"
@@ -58,22 +59,21 @@ VALIDATE $? "Changing to app directory"
 rm -rf /app/*
 VALIDATE $? "Removing existing code"
 
-unzip /tmp/user.zip &>>$LOG_FILE
-VALIDATE $? "unzip user"
+unzip /tmp/cart.zip &>>$LOG_FILE
+VALIDATE $? "unzip cart"
 
 npm install &>>$LOG_FILE
 VALIDATE $? "Install dependencies"
 
-cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service
+cp $SCRIPT_DIR/cart.service /etc/systemd/system/cart.service
 VALIDATE $? "Copy systemctl service"
 
 systemctl daemon-reload
-systemctl enable user &>>$LOG_FILE
-VALIDATE $? "Enable user"
+systemctl enable cart &>>$LOG_FILE
+VALIDATE $? "Enable cart"
 
-systemctl restart user
-VALIDATE $? "Restarted user"
+systemctl restart cart
+VALIDATE $? "Restarted cart"
 
-END_TIME=$(date +%s)
 TOTAL_TIME=$(( $END_TIME - $START_TIME ))
 echo -e "Script executed in: $Y $TOTAL_TIME Seconds $N"
