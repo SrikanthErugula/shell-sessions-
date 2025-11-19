@@ -62,7 +62,7 @@ application_setup()
     VALIDATE $? "unzip $app_name"
 }
 
-systemduser-setup(){
+systemduser_setup(){
     cp $SCRIPT_DIR/$app_name.repo /etc/systemd/system/$app_name.service
     VALIDATE $? "Copy systemctl service"
 

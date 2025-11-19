@@ -5,7 +5,7 @@ source ./common.sh
 app_name=catalogue
 application_setup
 nodejs_setup
-systemduser-setup
+systemduser_setup
 
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "Copy mongo repo"
