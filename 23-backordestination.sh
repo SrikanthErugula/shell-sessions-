@@ -52,7 +52,11 @@ FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 ### checking the folders status it means files exist or not 
 
 if [ ! -z "${FILES}" ]; then # (-z it works check to files are exist or not in folder if yes print the files found line or else if not print the no files are existed
-    echo " Files Found "
+    echo " Files Found $FILES"
+    TIMESTAMP=$(date +%F-%H-%M) # idhi top lo kuda create chesukovachu like first 1 to 10 lines lo 
+    ZIP_FILE_NAME=" $DEST_DIR/app_logs_$TIMESTAMP.zip" # manam anukone file name sample file for reff.......... idhi top lo kuda create chesukovachu like first 1 to 10 lines lo 
+    echo " zip file name is : $ZIP_FILE_NAME"
+    echo $FILES | zip -@ -j "$ZIP_FILE_NAME"  #( Here  vachhina files anni kuda zip loki velladaniki ee script formate...... zip -@ -j "$ZIP_FILE_NAME)
 else
-    echo " No fiels Existed .... $Y SKIPPING $N "
+    echo -e " No fiels Existed or archive .... $Y SKIPPING $N "
 fi
