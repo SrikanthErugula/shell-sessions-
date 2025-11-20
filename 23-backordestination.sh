@@ -8,7 +8,7 @@ N="\e[0m"
 C="\e[36m"
 SOURCE_DIR=$1
 DEST_DIR=$2
-# DAYS=${3:-14} # if not provided considered as 14 days
+DAYS=${3:-14} # if not provided considered as 14 days ${3 enhuku ante above lo series ga istunnam like $1 and $2 ala}
 
  LOGS_FOLDER="/var/log/shell-script"
  SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
@@ -34,12 +34,25 @@ if [ $# -lt 2 ]; then
     USAGE
 fi
 
+### Check SOURCE_DIR Exist ####
 if [ ! -d $SOURCE_DIR ]; then 
      echo -e " $R Source DIR $SOURCE_DIR doesn't exist $N"
      exit 1
 fi
 
+### Check DEST_DIR Exist ####
 if [ ! -d $DEST_DIR ]; then 
      echo -e " $R Source DIR $DEST_DIR doesn't exist $N"
      exit 1
+fi
+
+### Find the files ####
+FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
+
+### checking the folders status it means files exist or not 
+
+if [ ! -z "${FILES}" ]; then # (-z it works check to files are exist or not in folder if yes print the files found line or else if not print the no files are existed
+    echo " Files Found "
+else
+    echo " No fiels Existed "
 fi
