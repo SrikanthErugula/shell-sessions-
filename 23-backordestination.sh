@@ -38,12 +38,14 @@ fi
 if [ ! -d $SOURCE_DIR ]; then 
      echo -e " $R Source DIR $SOURCE_DIR doesn't exist $N"
      exit 1
+    echo  -e " $G Source DIR is $SOURCE_DIR is exist $N "
 fi
 
 ### Check DEST_DIR Exist ####
 if [ ! -d $DEST_DIR ]; then 
-     echo -e " $R Source DIR $DEST_DIR doesn't exist $N"
+     echo -e " $R Destination DIR $DEST_DIR doesn't exist $N"
      exit 1
+     echo  -e " $G Destination DIR is $DEST_DIR is exist $N "
 fi
 
 ### Find the files ####
@@ -56,8 +58,25 @@ if [ ! -z "${FILES}" ]; then
     TIMESTAMP=$(date +%F-%H-%M)
     ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     echo "Zip file name: $ZIP_FILE_NAME"
-    find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@  "$ZIP_FILE_NAME"
+    find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
+ ### Check Archieval Success or not ###
+    if [ -f $ZIP_FILE_NAME ];
+    then
+        echo -e "Archeival ... $G SUCCESS $N"
 
+        ### Delete if success ###
+        while IFS= read -r filepath
+        do
+            echo "Deleting the file: $filepath"
+            rm -rf $filepath
+            echo "Deleted the file: $filepath"
+        done <<< $FILES
+    else
+        echo "Archieval ... $R FAILURE $N"
+        exit 1
+    fi
 else
     echo -e " No fiels Existed or archive .... $Y SKIPPING $N "
 fi
+
+# -j iste only file name okkate istudhi like as cart.log ... -j ivvakapothe full path tho file name vastundhi like as home/ec2-user/source-dir/cart.log 
