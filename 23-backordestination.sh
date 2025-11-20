@@ -6,17 +6,17 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 C="\e[36m"
-# #SOURCE_DIR=$1
-# DEST_DIR=$2
+SOURCE_DIR=$1
+DEST_DIR=$2
 # DAYS=${3:-14} # if not provided considered as 14 days
 
-# LOGS_FOLDER="/var/log/shell-script"
-# SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-# #LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
-# LOG_FILE="$LOGS_FOLDER/backup.log" # modified to run the script as
+ LOGS_FOLDER="/var/log/shell-script"
+ SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
+ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+ #LOG_FILE="$LOGS_FOLDER/backup.log" # modified to run the script as
 
-#mkdir -p $LOGS_FOLDER
-#echo "Script started executed at: $(date)" | tee -a $LOG_FILE
+mkdir -p $LOGS_FOLDER
+echo "Script started executed at: $(date)" | tee -a $LOG_FILE
 
 # here backup purpose kabbatti adimstration access kavali server access so we need to the bewlo script 
 if [ $USERID -ne 0 ]; then
@@ -32,4 +32,14 @@ USAGE(){
 ### Check SOURCE_DIR and DEST_DIR passed or not ####
 if [ $# -lt 2 ]; then
     USAGE
+fi
+
+if [ ! -d $SOURCE_DIR ]: then 
+     echo -e " $R Source DIR $SOURCE_DIR doesn't exist $N"
+     exit 1
+fi
+
+if [ ! -d $DEST_DIR]: then 
+     echo -e " $R Source DIR $DEST_DIR doesn't exist $N"
+     exit 1
 fi
