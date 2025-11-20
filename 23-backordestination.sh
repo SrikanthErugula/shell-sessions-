@@ -56,9 +56,18 @@ if [ ! -z "${FILES}" ]; then # (-z it works check to files are exist or not in f
     TIMESTAMP=$(date +%F-%H-%M) # idhi top lo kuda create chesukovachu like first 1 to 10 lines lo 
     ZIP_FILE_NAME=" $DEST_DIR/app_logs_$TIMESTAMP.zip" # manam anukone file name sample file for reff.......... idhi top lo kuda create chesukovachu like first 1 to 10 lines lo ........ usually files zip chestunte adhi inko name tisukoni zip loki convert avuthai dhani overcome cheyadaniki zip file name rasam 
     # zip cmd install lakapothe install chesi ee script ni run cheyali 
-    
+
     echo " zip file name is : $ZIP_FILE_NAME"
-    echo $FILES | zip -@ -j "$ZIP_FILE_NAME"  #( Here  vachhina files anni kuda zip loki velladaniki ee script formate...... zip -@ -j "$ZIP_FILE_NAME)
+    find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"  #( Here  vachhina files anni kuda zip loki velladaniki ee script formate...... zip -@ -j "$ZIP_FILE_NAME)
+
+#     [ ec2-user@ip-172-31-19-60 ~/shell-sessions- ]$ sudo sh 23-backordestination.sh /home/ec2-user/source-dir /home/ec2-user/source-dir
+# Script started executed at: Thu Nov 20 09:54:49 UTC 2025
+#  Files Found /home/ec2-user/source-dir/cart.log
+# /home/ec2-user/source-dir/user.log
+#  zip file name is :  /home/ec2-user/source-dir/app_logs_2025-11-20-09-54.zip
+# 23-backordestination.sh: line 61: zip: command not found
+
+# so ikkaada error vachhindhi 
 else
     echo -e " No fiels Existed or archive .... $Y SKIPPING $N "
 fi
