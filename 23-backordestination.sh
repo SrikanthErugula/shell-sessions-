@@ -19,7 +19,7 @@ N="\e[0m"
 
 # here backup purpose kabbatti adimstration access kavali server access so we need to the bewlo script 
 if [ $USERID -ne 0 ]; then
-    echo "ERROR:: Please run this script with root privelege"
+    echo "ERROR:: $G Please run this script with root privelege $N"
     exit 1 # failure is other than 0
 fi
 
