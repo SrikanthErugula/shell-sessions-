@@ -58,7 +58,8 @@ if [ ! -z "${FILES}" ]; then # (-z it works check to files are exist or not in f
     # zip cmd install lakapothe install chesi ee script ni run cheyali 
 
     echo " zip file name is : $ZIP_FILE_NAME"
-    find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"  #( Here  vachhina files anni kuda zip loki velladaniki ee script formate...... zip -@ -j "$ZIP_FILE_NAME)
+     find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
+     #( Here  vachhina files anni kuda zip loki velladaniki ee script formate...... zip -@ -j "$ZIP_FILE_NAME)
 
 #     [ ec2-user@ip-172-31-19-60 ~/shell-sessions- ]$ sudo sh 23-backordestination.sh /home/ec2-user/source-dir /home/ec2-user/source-dir
 # Script started executed at: Thu Nov 20 09:54:49 UTC 2025
