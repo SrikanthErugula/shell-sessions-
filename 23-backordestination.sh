@@ -5,6 +5,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+C="\e[36m"
 # #SOURCE_DIR=$1
 # DEST_DIR=$2
 # DAYS=${3:-14} # if not provided considered as 14 days
@@ -19,7 +20,7 @@ N="\e[0m"
 
 # here backup purpose kabbatti adimstration access kavali server access so we need to the bewlo script 
 if [ $USERID -ne 0 ]; then
-    echo -e "ERROR:: $G Please run this script with root privelege $N"
+    echo -e "ERROR:: $C Please run this script with root privelege $N"
     exit 1 # failure is other than 0
 fi
 
