@@ -36,7 +36,7 @@ fi
 
 if [ ! -d $SOURCE_DIR ]; then 
      echo -e " $R Source DIR $SOURCE_DIR doesn't exist $N"
-     #exit 1
+     exit 1
 fi
 
 if [ ! -d $DEST_DIR ]; then 
