@@ -54,5 +54,5 @@ FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 if [ ! -z "${FILES}" ]; then # (-z it works check to files are exist or not in folder if yes print the files found line or else if not print the no files are existed
     echo " Files Found "
 else
-    echo " No fiels Existed "
+    echo " No fiels Existed .... $Y SKIPPING $N "
 fi
