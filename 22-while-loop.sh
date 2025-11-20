@@ -14,7 +14,7 @@
 # # Commands to be executed: This represents the actual commands or statements that form the body of the loop. These commands will run as long as the condition in the while statement is true.
 # done: This keyword marks the end of the while loop's command block.
 
-count=5
+count=$1
 
 echo "Starting countdown..."
 
