@@ -21,12 +21,9 @@ if [ ! -d $SOURCE_DIR ]; then # [ here -d $SOURCE_DIR ila iste dir vunte ichhina
 fi
 FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +14)
 
+while IFS= read -r SRI
+do
 
+    echo " Deleting the files : $SRI"
 
-
-
-
-
-
-
-
+done <<< $FILES_TO_DELETE # here files ithe just one < symbol chalu but if u want give input then put <<< symbols
