@@ -54,7 +54,9 @@ FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 if [ ! -z "${FILES}" ]; then # (-z it works check to files are exist or not in folder if yes print the files found line or else if not print the no files are existed
     echo " Files Found $FILES"
     TIMESTAMP=$(date +%F-%H-%M) # idhi top lo kuda create chesukovachu like first 1 to 10 lines lo 
-    ZIP_FILE_NAME=" $DEST_DIR/app_logs_$TIMESTAMP.zip" # manam anukone file name sample file for reff.......... idhi top lo kuda create chesukovachu like first 1 to 10 lines lo 
+    ZIP_FILE_NAME=" $DEST_DIR/app_logs_$TIMESTAMP.zip" # manam anukone file name sample file for reff.......... idhi top lo kuda create chesukovachu like first 1 to 10 lines lo ........ usually files zip chestunte adhi inko name tisukoni zip loki convert avuthai dhani overcome cheyadaniki zip file name rasam 
+    # zip cmd install lakapothe install chesi ee script ni run cheyali 
+    
     echo " zip file name is : $ZIP_FILE_NAME"
     echo $FILES | zip -@ -j "$ZIP_FILE_NAME"  #( Here  vachhina files anni kuda zip loki velladaniki ee script formate...... zip -@ -j "$ZIP_FILE_NAME)
 else
