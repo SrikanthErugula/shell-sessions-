@@ -27,7 +27,7 @@ I=87654345672345678765433456782345678876543234567
 sum=$(($C+$I))
 echo "SUM IS $sum"
 
-# Size = 4, Max index = 3
+# Size = 4 ( total count), Max index = 3 ( 0,1,2,3)
 LEADERS=("Modi" "Putin" "Trudo" "Trump")
 
 echo "All leaders: ${LEADERS[@]}"
