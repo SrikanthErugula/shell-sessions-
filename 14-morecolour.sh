@@ -12,7 +12,7 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){ # functions receive inputs through args just like shell script args
-    if [ $1 -ne 0 ]; then
+    if [ $1 -ne 0 ]; then  # $1 lo value is $?
         echo -e "Installing $2 ... $R FAILURE $N"
         exit 1
     else
