@@ -1,19 +1,16 @@
 #!/bin/bash
 # session 16
-#NUMBER=$1 # edhaina value bayata numchi istunte dhani manam ila cmd tho notify cheyali
+NUMBER=$1 # edhaina value bayata numchi istunte dhani manam ila cmd tho notify cheyali
 
-#if [ $NUMBER -lt 10 ]; then
-    #echo "Given number $NUMBER is less than 10"
-#elif [ $NUMBER -eq 10 ]; then
-    #echo "Given number $NUMBER is equal to 10"
-#else
-    #echo "Given number $NUMBER is greater than to 10"
-#fi
+if [ $NUMBER -lt 10 ]; then
+    echo "Given number $NUMBER is less than 10"
+elif [ $NUMBER -eq 10 ]; then
+    echo "Given number $NUMBER is equal to 10"
+else
+    echo "Given number $NUMBER is greater than to 10"
+fi
 
-# -gt ( greater than symbol)
-# -eq (equal symbol)
-# -ne (not equal)
-#-lt less than
+
 
 #practice 1
 
@@ -27,6 +24,9 @@
  #   echo "Givem number $number is greater then 10"
   #  fi
 
+
+
+
 #Practice 2
 
 #echo " Enter a number"
@@ -37,6 +37,9 @@
  #   echo " Given number $num is odd "
 #fi
 
+
+
+
 #Practice 3
 
 #echo "Enter a Number"
@@ -46,6 +49,11 @@
 #else 
     #echo " The given number $num is out of range"
 #fi
+
+
+
+
+
 
 # decision tisukovali ante manaki if condition kavali
 
