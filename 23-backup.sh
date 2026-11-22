@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# S-20
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -8,7 +8,7 @@ N="\e[0m"
 C="\e[36m"
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${3:-14} # if not provided considered as 14 days ${3 enhuku ante above lo series ga istunnam like $1 and $2 ala}
+DAYS=${3:-14} # see notes
 
  LOGS_FOLDER="/var/log/shell-script"
  SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
@@ -52,19 +52,19 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
 ### checking the folders status it means files exist or not 
-if [ ! -z "${FILES}" ]; then
+if [ ! -z "${FILES}" ]; then  # see notes
     ### Start Archeiving ###
     echo "Files found: $FILES"
-    TIMESTAMP=$(date +%F-%H-%M)
-    ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+    TIMESTAMP=$(date +%F-%H-%M) # in which time lo archiving chesam 
+    ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.zip" # see notes 
     echo "Zip file name: $ZIP_FILE_NAME"
     find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
+
  ### Check Archieval Success or not ###
-    if [ -f $ZIP_FILE_NAME ];
-    then
+    if [ -f $ZIP_FILE_NAME ]; then
         echo -e "Archeival ... $G SUCCESS $N"
 
-        ### Delete if success ###
+        ### Delete files in source dir if success archive ###
         while IFS= read -r filepath
         do
             echo "Deleting the file: $filepath"
@@ -79,4 +79,3 @@ else
     echo -e " No fiels Existed or archive .... $Y SKIPPING $N "
 fi
 
-# -j iste only file name okkate istudhi like as cart.log ... -j ivvakapothe full path tho file name vastundhi like as home/ec2-user/source-dir/cart.log 

@@ -1,12 +1,15 @@
 #!/bin/bash
 
+set -euo pipefail   #s-18
+
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-trap 'echo "There is an error in $LINENO, Command is: $BASH_COMMAND"' ERR
+trap 'echo "There is an error in $LINENO, Command is: $BASH_COMMAND"' ERR 
+
 LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 SCRIPT_DIR=$PWD

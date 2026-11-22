@@ -14,6 +14,8 @@
 # # Commands to be executed: This represents the actual commands or statements that form the body of the loop. These commands will run as long as the condition in the while statement is true.
 # done: This keyword marks the end of the while loop's command block.
 
+
+
 # count=3
 
 # echo "Starting countdown..."
@@ -27,6 +29,8 @@
 
 # echo "Times up!"
 
+
+## file reading 
 while IFS= read -r SRI; do # IFS stands for Internal Field Separator. it means by default line by line ni  proper ga  read chestudhi 
     # Process each line here
     echo "Processing line: $SRI"
@@ -36,7 +40,7 @@ while IFS= read -r SRI; do # IFS stands for Internal Field Separator. it means b
     # if [[ "$line" == "specific_text" ]]; then
     #    echo "Found specific text!"
     # fi
- done < 19-callscript-1.sh #( here is file_name)
+ done < 19-callscript-1.sh # we are passing inputs here 
 
 #  44.220.131.133 | 172.31.19.60 | t3.micro | https://github.com/SrikanthErugula/shell-sessions-.git
 # [ ec2-user@ip-172-31-19-60 ~/shell-sessions- ]$ cd
