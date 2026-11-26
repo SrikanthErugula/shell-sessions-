@@ -12,8 +12,8 @@ DAYS=${3:-14} # see notes
 
  LOGS_FOLDER="/var/log/shell-script"
  SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
- #LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
- LOG_FILE="$LOGS_FOLDER/backup.log" # modified to run the script as
+ #LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"  # this is for S-20
+ LOG_FILE="$LOGS_FOLDER/backup.log" # modified to run the script as  # S-21
 
 mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE
